@@ -21,6 +21,24 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+
+/* 数据接口 */
+var appData = require('../goods.json') // 引入数据
+var goods = appData.goods // 将goods.json文件下的goods数据赋值给goods变量
+var apiRoutes = express.Router() // 定义express.Router对象
+// 定义接口并返回数据
+// 就是当访问 /goods 路径时，服务器（这里使用的是express搭建的）返回一个json响应，
+// 响应中包含了data:goods数据
+apiRoutes.get('/goods', function(req, res) {
+  res.json({
+    data: goods
+  })
+})
+
+app.use('/api', apiRoutes)  // 定义接口在/api目录下，方便管理
+
+
+
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
