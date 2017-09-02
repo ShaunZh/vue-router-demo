@@ -3,9 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>vue-router-demo</title>
+    <style type="text/css" media="screen">
+      * { margin: 0; padding: 0; }
+      li {list-style: none;}
+      a {text-decoration: none;}
+      img {vertical-align: middle;}
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!-- 展示来自路由的页面数据 -->
+      <router-view></router-view>
+    </div>
     <!-- built files will be auto injected -->
   </body>
+  <script type="text/javascript">
+    // 使用 rem 布局，根据不同分辨率更改字体大小
+    (function(win, doc) {
+      change();
+      function change() {
+        doc.documentElement.style.fontSize = doc.documentElement.clientWidth * 20/320 + 'px';
+      }
+      // 调整窗口时 触发的事件
+      win.addEventListener('resize', change, false);
+      // 移动端横屏 竖屏转换时触发的事件
+      win.addEventListener('orientationchange', change, false);
+    })(window, document);
+  </script>
 </html>
