@@ -8,11 +8,14 @@
 </template>
 
 <script>
-  methods: {
-    goBack() {
-      window.history.back();
+  export default {
+    methods: {
+      goBack() {
+        window.history.back();
+      }
     }
   }
+
 </script>
 
 <style lang="css" scoped>

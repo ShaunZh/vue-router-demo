@@ -1,9 +1,9 @@
 <template lang="html">
   <li class="goods-list">
-    // 用于跳转页面的，可以理解为a标签
+
     <router-link to="/detail" class="goods-list-link">
       <div class="goods-list-pic">
-        ![](img)
+        <img :src="img" alt="">
       </div>
       <div class="goods-list-desc">
         <p class="goods-list-name">{{ title }}</p>

@@ -13,10 +13,11 @@
   </div>
 </template>
 
-<script>
+<script >
   import HomeHeader from '../components/HomeHeader'
   import GoodList from '../components/GoodList'
   import CommonFooter from '../components/CommonFooter'
+
   export default {
     name: "home",
     data() {
